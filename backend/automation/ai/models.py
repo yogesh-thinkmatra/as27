@@ -9,7 +9,6 @@ from django.db.models.signals import post_save,pre_save
 
 
 
-
 class BaseModel(models.Model):
     id=models.AutoField(primary_key=True,editable=False)
     status=models.BooleanField(default=1)
@@ -29,7 +28,7 @@ class Electricians(BaseModel):
     name=models.CharField(max_length=50,blank=True,null=False)
     phone_number=models.CharField(max_length=50,blank=True,null=False)
     grievance=models.BooleanField(default=False,blank=True,null=False)
-    
+    cities = models.TextField(blank=True, default='[]')
     
     def __str__(self):
         return self.name
@@ -49,10 +48,10 @@ class Sites(BaseModel):
     
 class SitesAllocation(BaseModel):
     class Meta:
-            db_table = 'sites'
+            db_table = 'sites_allocation'
 
-    site=models.ForeignKey(Sites,blank=True,null=False, on_delete=models.SET_NULL)
-    electrician=models.ForeignKey(Electricians,blank=True,null=False, on_delete=models.SET_NULL)
+    site=models.ForeignKey(Sites,blank=True,null=True, on_delete=models.SET_NULL)
+    electrician=models.ForeignKey(Electricians,blank=True,null=True, on_delete=models.SET_NULL)
 
     
     def __str__(self):

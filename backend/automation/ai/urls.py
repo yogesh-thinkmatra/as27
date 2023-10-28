@@ -11,6 +11,7 @@ urlpatterns = [
     path('site', SitesView.as_view(), name='site'),
     path('site/<int:pk>', SitesView.as_view(), name='site'),
 
+    path('assign-site', views.assign_electricians_to_sites, name='assign-site'),
 
 
 ]
