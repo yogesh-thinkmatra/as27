@@ -22,6 +22,7 @@
 2. **Virtual Environment Setup**: Set up a virtual environment for the backend.
 
 
+```bash
 cd backend
 python -m venv env
 .\env\Scripts\activate
@@ -29,7 +30,7 @@ cd automation
 pip install -r requirement.txt
 python manage.py runserver
 
-
+```
 
 
 ## Frontend Setup
