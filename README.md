@@ -34,10 +34,11 @@ python manage.py runserver
 
 ## Frontend Setup
 
+```bash
 cd frontend
 npm install
 npm run dev
-
+```
 
 ## api-testing-with-postman
 
